@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dukzy Coaching | Мэргэжлийн Коачинг</title>
+    <style>
+        /* Google Fonts - Professional Sans Serif */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+MN:wght@300;400;700&display=swap');
+
+        :root {
+            --primary-color: #001f3f; /* Гүн хөх - Итгэл төрүүлэх өнгө */
+            --accent-color: #d4af37;  /* Алтлаг өнгө - Чанар, амжилт */
+            --bg-light: #fcfcfc;
+            --text-dark: #1a1a1a;
+            --text-gray: #555;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans MN', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* 1. Header Section (Hero) */
+        header {
+            background: linear-gradient(rgba(0,31,63,0.85), rgba(0,31,63,0.85)), 
+                        url('https://images.unsplash.com/photo-1497366219563-a11f53da663d?auto=format&fit=crop&w=1350&q=80'); /* Professional background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        header h1 { font-size: 3.2rem; margin-bottom: 10px; letter-spacing: -1px; }
+        header p { font-size: 1.3rem; font-weight: 300; opacity: 0.9; }
+
+        /* Layout Containers */
+        section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+        .section-title { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            color: var(--primary-color); 
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        /* 2. Services / Categories Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 5px solid var(--primary-color);
+            transition: 0.3s;
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-icon { font-size: 3rem; margin-bottom: 20px; display: block; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color); }
+        .service-card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* 3. Pricing Section (Detailed) */
+        .pricing { background-color: #f0f2f5; max-width: 100%; }
+        .pricing-container { 
+            display: flex; 
+            justify-content: center; 
+            gap: 30px; 
+            flex-wrap: wrap; 
+            max-width: 1100px; 
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: white;
+            padding: 50px 35px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 340px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .price-card.popular {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .price-card h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--primary-color); }
+        .price-card .desc { font-size: 0.9rem; color: var(--text-gray); margin-bottom: 25px; }
+        .price-card .amount { font-size: 2.5rem; font-weight: 800; color: var(--primary-color); margin-bottom: 30px; }
+        .price-card .amount span { font-size: 1rem; font-weight: 400; color: var(--text-gray); }
+        
+        .price-list { list-style: none; text-align: left; margin-bottom: 40px; }
+        .price-list li { padding: 10px 0; border-bottom: 1px solid #eee; color: var(--text-gray); font-size: 0.95rem; }
+        .price-list li::before { content: "✓"; color: var(--accent-color); margin-right: 10px; font-weight: bold; }
+
+        /* 4. FAQ Section */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        details { background: white; margin-bottom: 15px; border-radius: 10px; border: 1px solid #eee; }
+        summary { padding: 20px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; color: var(--primary-color); }
+        summary::after { content: '+'; }
+        details[open] summary::after { content: '-'; }
+        .faq-answer { padding: 0 20px 20px; color: var(--text-gray); font-size: 0.95rem; line-height: 1.8; }
+
+        /* 5. CTA (Call to Action) */
+        .cta { text-align: center; padding: 100px 20px; background: var(--primary-color); color: white; }
+        .cta h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .cta-btn { 
+            display: inline-block; 
+            background: var(--accent-color); 
+            color: white; 
+            padding: 20px 50px; 
+            border-radius: 50px; 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            text-decoration: none; 
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(212,175,55,0.3);
+        }
+        .cta-btn:hover { transform: translateY(-5px); background: #c5a028; }
+
+        /* Modal */
+        #modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-content { background: white; padding: 40px; border-radius: 20px; text-align: center; max-width: 400px; width: 90%; }
+        .modal-content h2 { color: var(--primary-color); margin-bottom: 15px; }
+        .modal-content button { margin-top: 20px; padding: 10px 30px; border-radius: 5px; border: none; background: var(--primary-color); color: white; cursor: pointer; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            .price-card.popular { transform: scale(1); }
+            .pricing-container { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header -->
+    <header>
+        <h1>둘궁 (Dukzy)</h1>
+        <p>Таны амжилтын чиглэл заагч, мэргэжлийн коуч</p>
+    </header>
+
+    <!-- 2. Services/Categories -->
+    <section id="services">
+        <h2 class="section-title">Үйлчилгээний төрлүүд</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">📈</span>
+                <h3>Бизнес Коачинг</h3>
+                <p>Стартап болон бизнес эрхлэгчдэд зориулсан стратегийн төлөвлөлт, өсөлтийн зөвлөгөө.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🎓</span>
+                <h3>Карьер Коачинг</h3>
+                <p>Оюутан, залуу мэргэжилтнүүдэд зориулсан карьер болон хувь хүний хөгжлийн чиглэл.</p>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🗣️</span>
+                <h3>Харилцааны Ур чадвар</h3>
+                <p>Лидер болоход шаардлагатай илтгэл, хэлэлцүүлэг болон харилцааны ур чадвар.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pricing -->
+    <section class="pricing">
+        <h2 class="section-title">Үйлчилгээний төлөвлөгөө</h2>
+        <div class="pricing-container">
+            <!-- Basic -->
+            <div class="price-card">
+                <h3>Суралцагч</h3>
+                <div class="desc">Нэг удаагийн зөвлөгөө</div>
+                <div class="amount">150,000<span> / сесс</span></div>
+                <ul class="price-list">
+                    <li>60 минутын зөвлөгөө</li>
+                    <li>Хамж хөгжүүлэх төлөвлөгөө</li>
+                    <li>Имэйлээр дахин холбогдох</li>
+                </ul>
+            </div>
+
+            <!-- Recommended -->
+            <div class="price-card popular">
+                <div class="popular-tag">Хамгийн их сонгогддог</div>
+                <h3>Мэргэжилтэн</h3>
+                <div class="desc">Сар бүрийн дэмжлэг</div>
+                <div class="amount">450,000<span> / сар</span></div>
+                <ul class="price-list">
+                    <li>Сарын 4 сесс (долоо хоног бүр)</li>
+                    <li>24/7 Messenger дээр асуулт</li>
+                    <li>Амжилтын хяналтын тайлан</li>
+                    <li>Бизнес хэрэгсэл хэрэглээний зөвлөгөө</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FAQ -->
+    <section id="faq">
+        <h2 class="section-title">Түгээмэл асуулт</h2>
+        <div class="faq-container">
+            <details>
+                <summary>Сесээ хэзээ товлох вэ?</summary>
+                <div class="faq-answer">Та вэбсайт эсвэл мессежээр дамжуулан долдуо хоногоос өмнө цагаа захиалж болно.</div>
+            </details>
+            <details>
+                <summary>Уулзалт онлайн байх уу?</summary>
+                <div class="faq-answer">Тийм ээ, Zoom эсвэл Google Meet ашиглан дэлхийн хаагуур ч онлайн уулзалт хийх боломжтой.</div>
+            </details>
+            <details>
+                <summary>Төлбөриг хэзээ хийх вэ?</summary>
+                <div class="faq-answer">Уулзалтаас өмнө банкны шилжүүлэг эсвэл онлайн төлбөрийн хэрэгслээр төлөх шаардлагатай.</div>
+            </details>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section class="cta">
+        <h2>Та өөрийн ирээдүйг өнөөдөр бүтээгээрэй</h2>
+        <p style="margin-bottom: 30px; opacity: 0.8;">Бүх зүйл таны шийдвэрээс эхэлнэ.</p>
+        <button class="cta-btn" onclick="showModal()">Одоо бүртгүүлэх</button>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal">
+        <div class="modal-content">
+            <h2>🎉 Бүртгэл эхэллээ!</h2>
+            <p>Таны хүсэлтийг хүлээн авлаа. Манай баг удахгүй тантай холбогдож, дэлгэрэнгүй мэдээлэл өгөх болно.</p>
+            <button onclick="closeModal()">Хаах</button>
+        </div>
+    </div>
+
+    <script>
+        function showModal() { document.getElementById('modal').style.display = 'flex'; }
+        function closeModal() { document.getElementById('modal').style.display = 'none'; }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) closeModal();
+        }
+    </script>
+
+</body>
+</html>
