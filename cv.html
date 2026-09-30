@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dukzy | Profile</title>
+    <style>
+        /* 기본 스타일 및 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+        }
+
+        /* 1. 상단 소개 영역 (남색 바탕) */
+        header {
+            background-color: #001f3f; /* Navy */
+            color: #ffffff;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 배경 장식용 도형 */
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .profile-emoji {
+            font-size: 80px;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.8;
+        }
+
+        /* 2. 본문 영역 (밝은 배경) */
+        main {
+            max-width: 700px;
+            margin: -50px auto 60px; /* 상단 영역과 겹치게 배치 */
+            padding: 0 20px;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: #001f3f;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            margin-right: 10px;
+        }
+
+        /* 관심 분야 스타일 */
+        .interest-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: #001f3f;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* 좋아하는 것 스타일 */
+        .favorite-list {
+            list-style: none;
+        }
+
+        .favorite-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        .favorite-item::before {
+            content: "✨";
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        /* 목표 스타일 */
+        .goal-container {
+            background: linear-gradient(135deg, #001f3f 0%, #003366 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        /* 스마트폰 대응 (반응형) */
+        @media (max-width: 600px) {
+            header {
+                padding: 70px 20px;
+            }
+            header h1 {
+                font-size: 2.2rem;
+            }
+            .content-card {
+                padding: 30px 20px;
+            }
+            main {
+                margin-top: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 소개 영역 -->
+    <header>
+        <div class="profile-emoji">🎓</div>
+        <h1>dukzy</h1>
+        <p>경영학과 3학년</p>
+    </header>
+
+    <!-- 본문 영역 -->
+    <main>
+        <div class="content-card">
+            
+            <!-- 관심 분야 -->
+            <div class="section">
+                <div class="section-title"><span>🔍</span> 관심 분야</div>
+                <div class="interest-tags">
+                    <div class="tag">유통</div>
+                    <div class="tag">마케팅</div>
+                    <div class="tag">창업</div>
+                </div>
+            </div>
+
+            <!-- 좋아하는 것 -->
+            <div class="section">
+                <div class="section-title"><span>❤️</span> 좋아하는 것</div>
+                <ul class="favorite-list">
+                    <li class="favorite-item">새로운 비즈니스 모델 탐구</li>
+                    <li class="favorite-item">데이터 분석과 통계</li>
+                    <li class="favorite-item">커피 한 잔의 여유</li>
+                </ul>
+            </div>
+
+            <!-- 목표 -->
+            <div class="section">
+                <div class="section-title"><span>🎯</span> 나의 목표</div>
+                <div class="goal-container">
+                    "끊임없이 변화하는 시장을 분석하여<br>가치를 창출하는 비즈니스 전문가가 되자!"
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
